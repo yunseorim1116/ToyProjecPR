@@ -1,0 +1,9 @@
+.all-content {
+  max-width: 375px;
+margin: auto;
+}
+
+.expent-list {
+  display: flex;
+  justify-content: space-between;
+}

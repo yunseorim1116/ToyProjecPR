@@ -7,8 +7,6 @@ dragBtn.addEventListener("touchend", handleEnd, false);
 const header = document.querySelector(".header");
 const bottonOfHeader = header.getBoundingClientRect().bottom;
 
-console.log(bottonOfHeader);
-
 function handleStart(e) {
   console.log(e);
 }
@@ -31,35 +29,38 @@ getData()
   .then((data) => getDatas(data));
 
 function getDatas(data) {
-  //   console.log(data);
   data.sort(function (a, b) {
     return new Date(b.date) - new Date(a.date);
   }); //최신순으로 정렬 ,,
 
   const test = groupArrayOfObjects(data, "date"); //날짜별로 나눠준다
+  //   console.log(test);
   const newArr = Object.entries(test);
+  //   console.log(newArr);
 
   newArr.forEach((datas) => {
+    console.log(datas);
+    console.log("---");
     const ul = document.createElement("ul");
     ul.classList.add("money-history");
 
-    // readyDrow(datas);
+    console.log(datas[1]);
     const sum = datas[1]
       .filter((i) => i.inOut === "out")
-      .reduce((a, b) => a + b.price, 0);
+      .reduce((a, b) => a + b.price, 0); //필터링을 해서 먼저 총액을 구하기
+
+    console.log(sum);
 
     expendWrap.appendChild(drowTotal(datas[1][0], sum));
     expendWrap.appendChild(ul);
     datas[1].forEach((data) => {
-      drowTodayExpend(ul, data, sum);
+      drowTodayExpend(ul, data);
     });
   });
 }
 
-//그룹바이 함수
 function drowTotal(datas, sum) {
   //오늘,총합 html
-  console.log(datas);
 
   const useWrap = document.createElement("div");
   useWrap.classList.add("day-use__wrap");
@@ -89,10 +90,8 @@ function drowTotal(datas, sum) {
   return useWrap;
 }
 
-function drowTodayExpend(ul, datas, sum) {
-  //하루동안 소비 html
-
-  if (!datas.price) datas.price = "0";
+function drowTodayExpend(ul, datas) {
+  if (!datas.price) datas.price = "0"; //널처리
 
   const li = document.createElement("li");
   li.classList.add("history__list");
