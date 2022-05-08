@@ -1,0 +1,250 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700&display=swap");
+
+body {
+  font-family: normal 16px "Noto Sans Korean", sans-serif;
+}
+strong {
+  font-weight: 700;
+}
+.slide {
+  width: 100vw;
+  height: 100%;
+  background-color: #eeece5;
+  max-width: 375px;
+}
+
+.icon-size1,
+.icon-size2 {
+  width: 24px;
+  height: 24px;
+}
+.icon-size2 {
+  margin-left: 20px;
+}
+.header {
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 375px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-wrap {
+  margin-bottom: 20px;
+}
+.title-wrap__avatar,
+.title-wrap__title,
+.title-wrap__icon {
+  width: 33%;
+}
+
+.title-wrap__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-wrap__icon {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-wrap {
+  box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.account-status {
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 16px rgba(226, 191, 66, 0.19);
+  border-radius: 14px;
+  width: 280px;
+  margin: auto;
+}
+
+.bank-account {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.transfer {
+  position: absolute;
+  right: 0px;
+}
+.bank-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.graph-wrap {
+  display: flex;
+  justify-content: center;
+}
+.balance-amount {
+  display: flex;
+  justify-content: center;
+}
+
+.ad-text {
+  text-align: center;
+}
+
+.go {
+  margin-left: 3px;
+}
+
+.history-wrap {
+  border-radius: 30px 30px 0px 0px;
+  background-color: white;
+}
+.drag-btn {
+  position: relative;
+  width: 375px;
+  height: 30px;
+}
+
+.drag-btn__btn {
+  width: 48px;
+  height: 2.15px;
+  position: absolute;
+  left: 39.2%;
+  right: 44%;
+  top: 1.04%;
+  bottom: 98.39%;
+  background: #c4c4c4;
+  border-radius: 4px;
+}
+
+.goal-btn {
+  font-size: 12px;
+  margin-right: 5px;
+  box-sizing: border-box;
+  /* border-radius: 5px 10px 0px 0px; */
+  background-color: #dcdcdc;
+  border-radius: 5px;
+  width: 160px;
+  height: 47px;
+}
+.goal-wrap {
+  display: flex;
+  justify-content: center;
+}
+.goal-color__red {
+  position: relative;
+  color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #ff5f00;
+  width: 70%;
+  height: 100%;
+}
+
+.graph-wrap {
+  margin-bottom: 10px;
+}
+.goal-color__yellow {
+  position: relative;
+  color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #feb700;
+  width: 70%;
+  height: 100%;
+}
+
+.btn-text {
+  font-size: 12px;
+  position: absolute;
+  top: 12px;
+  left: 5px;
+}
+.data-mygoal {
+  margin-bottom: 3px;
+}
+.nav {
+  position: sticky; /*픽스 안되는 이유 무엇..*/
+}
+.nav__icon-wrap {
+  align-items: center;
+  height: 76px;
+  background: linear-gradient(#00bdb2, #c4e7b8);
+  display: flex;
+  justify-content: space-around;
+}
+
+.day-use__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.day-use__expand-wrap {
+  display: flex;
+}
+
+.history__list {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #bcbcbc;
+}
+
+.test {
+  margin-top: 10px;
+}
+
+/**/
+.history-wrap {
+  box-sizing: border-box;
+  padding: 20px;
+}
+.account {
+  color: #858585;
+  font-size: 14px;
+}
+.amount {
+  font-size: 24px;
+}
+
+.balance-amount {
+  color: #858585;
+  font-size: 14px;
+}
+
+.ad-text {
+  font-weight: 700;
+  font-size: 13px;
+  padding: 25px;
+}
+
+.day-use__date {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.day-use__expand-wrap {
+  color: #b4b4b4;
+  font-size: 14px;
+}
+
+.day-use__wrap,
+.history__list {
+  box-sizing: border-box;
+  padding: 10px;
+}
+.day-money__wrap {
+  position: relative;
+  overflow: auto;
+  font-size: 18px;
+  /* overflow: hidden; */
+  height: 250px;
+}
+
+.red {
+  color: red;
+}
