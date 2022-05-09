@@ -9,38 +9,35 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-</head>
+  </head>
   <body>
     <section class="all-content">
       <h1>지출관리</h1>
 
       <h3 class="today-report">일간 리포트</h3>
 
-      <div style="width:375px;height:400px;">
-        <canvas id="myChart"></canvas>
-    </div>
-
-      <h3 class="month-report">6월 지출 패턴</h3>
-      <div class="expent-list">
-        <div class="expent-list__expend-wrap">
-          <img class="img-icon" src="alt" />
-          <span class="expent-list__expend">주유비</span>
-        </div>
-
-        <div class="expent-list__amount-wrap">
-          <span class="expent-list__amount">560000</span> 원
-        </div>
-      </div>
+      <h3 class="month-report"><span class="month">임시</span>월 지출패턴</h3>
 
       <div style="width: 375px; height: 100%">
         <!--차트가 그려질 부분-->
-        <canvas id="pie-chart" width="250" height="250"></canvas>
+        <canvas id="doughnut-chart" width="250" height="250"></canvas>
+      </div>
+      <div class="expend-list__box">
+        <!--js에서 가져와서 -->
+
+        <div class="expend-list">
+          <!--이 안의 내용들을 붙여버리기-->
+          <!-- <div class="expent-list__expend-wrap">
+            <img class="img-icon" src="alt" />
+            <span class="expend-list__expend">주유비</span>
+          </div> -->
+          <!-- 
+          <div class="expend-list__amount-wrap">
+            <span class="expend-list__amount">560000</span> 원
+          </div> -->
+        </div>
       </div>
     </section>
     <script src="chart.js"></script>
-
-
-
-
   </body>
 </html>

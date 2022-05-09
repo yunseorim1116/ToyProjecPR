@@ -1,9 +1,10 @@
 .all-content {
   max-width: 375px;
-margin: auto;
+  margin: auto;
 }
 
-.expent-list {
+.expend-list {
   display: flex;
   justify-content: space-between;
+  padding: 8px;
 }
