@@ -57,7 +57,7 @@ function getDatas(data) {
 
   makeTodayData(newDatas); //데이터 가공
   getMonthData(data); //월별 데이터 만들기//함수가 끝나면 가공 완료
-  getMonthClassfy(allYearList[4]); //원하는 월별 데이터를 "직접"넣으면
+  getMonthType(allYearList[4]); //원하는 월별 데이터를 "직접"넣으면
   month.textContent = "5";
 }
 
@@ -70,19 +70,72 @@ function makeTodayData(newDatas) {
       .filter((i) => i.inOut == "out")
       .reduce((a, b) => a + b.price, 0);
 
-    const test = {
-      [key]: sum,
-    };
 
     todayDate.push(key.substring(5, 10));
-    todayExpendData.push(test);
+    todayExpendData.push(sum);
   }
 
+  console.log(todayExpendData);
+  console.log(todayDate);
+  var context = document.getElementById("myChart").getContext("2d");
+  var myChart = new Chart(context, {
+    type: "bar", // 차트의 형태
+    data: {
+      // 차트에 들어갈 데이터
+      labels: todayDate,
+      datasets: [
+        {
+          //데이터
+          label: "일별 소비 근황", //차트 제목
+          fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+          data: todayExpendData,
+          backgroundColor: [
+            //색상
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)",
+          ],
+          borderColor: [
+            //경계선 색상
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)",
+          ],
+          borderWidth: 1, //경계선 굵기
+        } /* ,
+          {
+              label: 'test2',
+              fill: false,
+              data: [
+                  8, 34, 12, 24
+              ],
+              backgroundColor: 'rgb(157, 109, 12)',
+              borderColor: 'rgb(157, 109, 12)'
+          } */,
+      ],
+    },
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    },
+  });
 }
 
 function getMonthData(datas) {
   //데이터가공
- 
 
   for (const [key, value] of Object.entries(datas)) {
     const month = value.date.substring(0, 6);
@@ -115,7 +168,7 @@ function getMonthData(datas) {
   }
 }
 
-function getMonthClassfy(monthDatas) {
+function getMonthType(monthDatas) {
   //원하는 달의 데이터를 넘겨받음
   const newMonthDatas = groupBy(monthDatas, "type");
   makeHtmlMonthList(newMonthDatas);
@@ -135,13 +188,15 @@ const groupBy = function (data, key) {
 };
 
 function makeHtmlMonthList(monthDatas) {
+  
+  console.log(monthDatas)
+
   for (const [key, value] of Object.entries(monthDatas)) {
 
+    
     const itemExpend = value
       .filter((i) => i.inOut === "out")
       .reduce((a, b) => a + b.price, 0); //목록당 지출
-
-
 
     const expendList = document.createElement("div");
 
@@ -177,6 +232,7 @@ function makeHtmlMonthList(monthDatas) {
     expendListBox.append(expendList);
   } //html그려주기 끝
 
+  console.log(keyData);
 
   new Chart(document.getElementById("doughnut-chart"), {
     type: "doughnut",

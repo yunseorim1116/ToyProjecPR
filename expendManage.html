@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="chart.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   </head>
   <body>
@@ -15,6 +14,12 @@
       <h1>지출관리</h1>
 
       <h3 class="today-report">일간 리포트</h3>
+
+      <div style="width: 375px; height: 300px;">
+        <!--차트가 그려질 부분-->
+        <canvas id="myChart"></canvas>
+      </div>
+
 
       <h3 class="month-report"><span class="month">임시</span>월 지출패턴</h3>
 
