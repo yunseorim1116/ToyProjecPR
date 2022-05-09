@@ -84,7 +84,7 @@ function drowTotal(datas, sum) {
   useWrap.append(useDate, useExpendWrap);
 
   useDate.textContent = datas.date;
-  Expend.textContent = sum;
+  Expend.textContent = sum.toLocaleString();
   won.textContent = "원";
 
   return useWrap;
@@ -104,7 +104,7 @@ function drowTodayExpend(ul, datas) {
     price.textContent = "+";
     price.classList.add("red");
   }
-  price.textContent += datas.price;
+  price.textContent += datas.price.toLocaleString();
   price.classList.add("price");
   li.append(item, price);
   ul.append(li);
